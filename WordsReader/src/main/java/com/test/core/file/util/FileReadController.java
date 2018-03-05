@@ -94,6 +94,8 @@ public class FileReadController {
 				dataString = dataString.concat(" ");
 				dataString = dataString.concat(line);
 			}
+			// replace all the special characters
+			dataString = dataString.replaceAll("[^a-zA-Z0-9 ]", "");
 			// Get the words by splitting the dataString
 			String[] wordsArray = dataString.split(" ");
 			int totalWordsInFile = wordsArray.length;
