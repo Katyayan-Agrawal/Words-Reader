@@ -1,8 +1,7 @@
 /**
  * Controller class used to get the total words count and 
- * top 5 most occurance words of the uploaded file(s)..
- * 
- * 
+ * top most occurance words of the uploaded file(s)..
+ *  
  */
 package com.test.core.file.util;
 
@@ -18,7 +17,6 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,10 +70,13 @@ public class FileReadController {
 		return myfile;
 	}
 	
-	/**
-	 * Method to get the total number of words and top words of maximum occurrence from the passed File
-	 * 
-	 */
+  /**
+   * Method to find the frequent words from the passed File
+   * @param file.
+   * @return MyFile.
+   * @exception FileNotFoundException, IOException On input error.
+   * @see FileNotFoundException, IOException
+   */
 	private MyFile findFrequentWords(File file) {
 		 MyFile  myFile = new MyFile();
 		 FileReader fileReader = null;
@@ -118,8 +119,8 @@ public class FileReadController {
 			}
 			LinkedHashMap<String, Integer> sortedMap =
 			        new LinkedHashMap<>();
-			List<String> mapKeys = new ArrayList(wordMap.keySet());
-			List<Integer> mapValues = new ArrayList(wordMap.values());
+			List<String> mapKeys = new ArrayList<String>(wordMap.keySet());
+			List<Integer> mapValues = new ArrayList<Integer>(wordMap.values());
 			Collections.sort(mapValues, Collections.reverseOrder());
 			Iterator<Integer> valueIt = mapValues.iterator();
 		    while (valueIt.hasNext()) {
@@ -151,8 +152,7 @@ public class FileReadController {
             	myWord.setWord(keyWord);
             	myWords[i] = myWord;
             	i++;
-            }
-            
+            }            
 
 					            
 			// Set the MyFile data bean with the result

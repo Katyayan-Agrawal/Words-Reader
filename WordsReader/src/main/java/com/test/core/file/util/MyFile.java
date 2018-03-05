@@ -16,12 +16,14 @@ public class MyFile {
 	private Integer totalWordsInFile;
 
 	/**
-	 * 
+	 * Default Constructor
 	 */
 	public MyFile() {
-		// TODO Auto-generated constructor stub
 	}
 	
+	/**
+	 * Set/Get method for filePath
+	 */
 	public String getFileName() {
 		return fileName;
 	}
@@ -29,8 +31,9 @@ public class MyFile {
 		this.fileName = fileName;
 	}
 	
-
-	
+	/**
+	 * Set/Get method for totalWordsInFile
+	 */	
 	public Integer getTotalWordsInFile() {
 		return totalWordsInFile;
 	}
@@ -38,6 +41,9 @@ public class MyFile {
 		this.totalWordsInFile = totalWordsInFile;
 	}
 
+	/**
+	 * Set/Get method for frequentWords
+	 */	
 	public MyWord[] getFrequentWords() {
 		return frequentWords;
 	}
@@ -45,6 +51,4 @@ public class MyFile {
 	public void setFrequentWords(MyWord[] frequentWords) {
 		this.frequentWords = frequentWords;
 	}
-
-
 }
