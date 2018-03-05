@@ -13,11 +13,11 @@
 <h3 style="background-color:Tomato;">File Uploaded</h3> 
 <c:out value="${message}"/><br><br><br>
 	Click <a href="/fileupload.html">here</a> to upload more files.
-	<hr size="4" color="gray"/>
-	<table>
-	 	<tr>
-	       	<td>Select individual file to see the words details - </td>
-	    </tr>
+	<hr size="4" color="gray"/><br>
+	
+	Select a file below to see the file details -<br><br>
+	<table>	
+	    
 		<c:forEach items="${files}" var="fileName" varStatus="filecount">
 	    <tr>
 	    	<td><a class="fileclass" id="fileid ${filecount.index }" href="#"  data-fileName="${fileName}"><c:out value="${fileName}"/></a></td>
