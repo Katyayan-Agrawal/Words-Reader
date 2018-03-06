@@ -1,6 +1,6 @@
 /**
  * This is the Controller class for uploading the files. 
- * It redirects to 'viewfiles', which list the uploaded files
+ * It redirects to 'viewfiles', which list the uploaded files.
  */
 package com.test.core.fileupload;
 
