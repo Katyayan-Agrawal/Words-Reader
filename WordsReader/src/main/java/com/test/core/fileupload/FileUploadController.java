@@ -1,5 +1,6 @@
 /**
- * This is the Controller class for uploading the files
+ * This is the Controller class for uploading the files. 
+ * It redirects to 'viewfiles', which list the uploaded files
  */
 package com.test.core.fileupload;
 
@@ -13,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
- * @author Katyayan
+ * @author Katyayan Agrawal
  *
  */
 @Controller
@@ -32,7 +33,8 @@ public class FileUploadController {
 	public String uploadFile(@RequestParam("File") MultipartFile file, RedirectAttributes redirectAttributes) {
 		if(file != null) {
 			fileStorage.storeFile(file);
-			 redirectAttributes.addFlashAttribute("message",
+			
+			redirectAttributes.addFlashAttribute("message",
 		                "You successfully uploaded " + file.getOriginalFilename() + ".");
 
 		}        
@@ -41,9 +43,10 @@ public class FileUploadController {
 	
 	@RequestMapping("/viewfiles")
 	public String fetchfiles(Model model) {
-	      String[] fileNames = fileStorage.fetchFileNames();
-	      model.addAttribute("files" , fileNames);
-	      return "listFiles";
+		
+		String[] fileNames = fileStorage.fetchFileNames();
+		model.addAttribute("files" , fileNames);
+		return "listFiles";
 	}
 	
 }

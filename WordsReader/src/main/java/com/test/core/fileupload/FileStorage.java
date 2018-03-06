@@ -1,5 +1,6 @@
 /**
- * This is the file used to store the uploaded file to the local directory	
+ * This is the file used to store the uploaded file to the directory path defined in the application.properties.
+ * It is also used to fetch and list the files in the list.	
  */
 package com.test.core.fileupload;
 
@@ -37,14 +38,13 @@ public class FileStorage {
    * @see IOException
    */
 	public void storeFile(MultipartFile file) {
-		 byte[] bytes;
+		byte[] bytes;
 		try {
 			bytes = file.getBytes();
 			Path path = Paths.get(filePath + file.getOriginalFilename());
 	         Files.write(path, bytes);
 		} catch (IOException e) {
 			System.err.print("IOException -"+ e);
-			//e.printStackTrace();
 		}
 	}
 	
