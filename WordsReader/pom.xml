@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 
 	<name>test-core</name>
-	<description>Test Apple</description>
+	<description>Words Reader</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
